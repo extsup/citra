@@ -114,7 +114,8 @@ void EGLAndroid::UpdateWindow() {
 }
 
 void EGLAndroid::UpdateLayout() {
-    UpdateFramebufferLayout(window_width, window_height);
+    constexpr float RENDER_SCALE = 0.75f;
+    UpdateFramebufferLayout(static_cast<u32>(window_width * RENDER_SCALE), static_cast<u32>(window_height * RENDER_SCALE));
 }
 
 void EGLAndroid::CreateWindowSurface() {
